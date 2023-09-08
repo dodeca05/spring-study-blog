@@ -11,7 +11,7 @@ COPY gradlew $APP_HOME
 COPY build.gradle $APP_HOME
 COPY settings.gradle $APP_HOME
 COPY gradle $APP_HOME/gradle
-
+RUN chmod +x ./gradlew
 RUN ./gradlew -x test build || return 0
 
 # 프로젝트 소스 폴더 복사
