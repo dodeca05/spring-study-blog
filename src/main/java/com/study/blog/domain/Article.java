@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class)
 @Entity
 @Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Article {
     @Id
     @Getter
@@ -41,8 +42,6 @@ public class Article {
     @LastModifiedDate
     @Column(name="updated_at")
     private LocalDateTime updatedAt;
-
-    protected Article(){}
 
     public void update(String title,String content)
     {
